@@ -6,24 +6,19 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    respond_to do |format|
-      format.html
-    end    
   end
 
   def create
     @user = User.new(params[:user])
-    respond_to do |format|
       if @user.save
-        format.html{ redirect_to :action =>:index}
+         redirect_to :action =>:index
       else
-        format.html{ render :action => "new"}
+         render :action => "new"
       end
-    end
   end
 
   def show
-    @user = User.find(users[:id])
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -32,23 +27,17 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    
-    respond_to do |format|  
       if @user.update_attributes(params[:user])  
-        format.html  { redirect_to(@user, :notice => 'User was successfully updated.') }
+         redirect_to(@user, :notice => 'User was successfully updated.')
       else
-        format.html{ render :action => "edit"}
+         render :action => "edit"
       end
-    end
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-
-    respond_to do |format|
-      format.html{ redirect_to users_url}
-    end
+    redirect_to users_url
   end
 
 end
