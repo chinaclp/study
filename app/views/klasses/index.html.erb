@@ -12,5 +12,6 @@
     <td><%= link_to '删除', klass_path(:id => klass.id),:method => 'delete'%></td>
   </tr>
 <% end %>
-  <%= link_to '新建', new_klass_path%>
+<%= link_to '新建', new_klass_path%>
+<%= link_to '返回主页面', home_index_path%>
 </table>
