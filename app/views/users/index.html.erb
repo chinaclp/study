@@ -1,6 +1,6 @@
 <h1>hello!</h1>
  
-<table>
+<table border="1">
   <tr>
     <th>name</th> 
     <th>klass</th> 
@@ -9,7 +9,7 @@
   <% @users.each do |user| %>
      <tr>
         <td><%= user.name %></td>
-        <td><%= user.klass %></td> 
+        <td><%= user.klass.klass_name %></td> 
         <td><%= link_to '修改',edit_user_path(:id => user.id),:method => 'get'%></td>
         <td><%= link_to '删除',user_path(:id => user.id),:method => 'delete'%></td>
      </tr>
@@ -17,4 +17,6 @@
 </table>
 
 <%= link_to '新建', new_user_path %>
+
+<%= link_to '班级列表',klasses_path%>
 <%= paginate @users%>

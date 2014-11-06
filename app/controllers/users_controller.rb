@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @klass -Klass.find(params[:klass][:klass_id])
+    @user = @klass.user.create(params[:user])
       if @user.save
          redirect_to :action =>:index
       else
