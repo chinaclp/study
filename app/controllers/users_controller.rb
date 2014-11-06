@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
+  before_filter :per_load
+
   def index
- #   @users = User.all
     @users = User.order('id desc').page(params[:page]).per(3)
   end
 
@@ -19,15 +20,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
       if @user.update_attributes(params[:user])  
          redirect_to(@user, :notice => 'User was successfully updated.')
       else
@@ -36,9 +34,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_url
   end
 
+  private
+  def per_load
+    @user = User.find_by_id(params[:id]) if params[:id]
+  end
 end

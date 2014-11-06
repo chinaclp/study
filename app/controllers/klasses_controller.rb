@@ -1,5 +1,7 @@
 class KlassesController < ApplicationController
 
+  before_filter :per_load
+
   def index
     @klasses = Klass.all
   end
@@ -18,15 +20,14 @@ class KlassesController < ApplicationController
   end
 
   def show
-    @klass = Klass.find(params[:id])
+  #  @klass = Klass.find(params[:id])
   end
 
   def edit
-    @klass = Klass.find(params[:id])
+  #  @klass = Klass.find(params[:id])
   end
 
   def update
-    @klass = Klass.find(params[:id])
     if @klass.update_attributes(params[:klass])
         redirect_to(@klass, :notice => 'Klass has successfully updated.')
     else
@@ -35,8 +36,12 @@ class KlassesController < ApplicationController
   end
 
   def destory
-    @klass = Klass.find(params[:id])
     @klass.destroy
     redirect_to klasses_url
+  end
+
+  private
+  def per_load
+    @klass = Klass.find_by_id(params[:id]) if params[:id]
   end
 end
