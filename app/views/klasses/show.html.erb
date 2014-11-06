@@ -5,5 +5,5 @@
  <%= @klass.klass_name%>
  </p>
 
- <%= link_to "修改",edit_klass_path(:id=>klass.id),:method=>'get'%>
+ <%= link_to "修改",edit_klass_path(@klass) %>
  <%= link_to "返回",klasses_path%>

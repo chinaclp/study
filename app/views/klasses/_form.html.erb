@@ -1,9 +1,9 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+<%= form_for(@klass) do |f| %>
+  <% if @klass.errors.any? %>
     <div id="errorExplanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being     saved:</h2>
+      <h2><%= pluralize(@klass.errors.count, "error") %> prohibited this klass from being     saved:</h2>
       <ul>
-        <% @user.errors.full_messages.each do |msg| %>
+        <% @klass.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -11,7 +11,7 @@
   <% end %>
 
   <div class= "field">
-    <%= f.label :klass_name%><br/>
+    <%= f.label "填写班级名称"%><br/>
     <%= f.text_field :klass_name%>
   </div>
 

@@ -26,9 +26,17 @@ class KlassesController < ApplicationController
   end
 
   def update
+    @klass = Klass.find(params[:id])
+    if @klass.update_attributes(params[:klass])
+        redirect_to(@klass, :notice => 'Klass has successfully updated.')
+    else
+      render :action => "edit"
+    end
   end
 
   def destory
-
+    @klass = Klass.find(params[:id])
+    @klass.destroy
+    redirect_to klasses_url
   end
 end

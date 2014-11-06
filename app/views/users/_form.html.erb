@@ -15,11 +15,8 @@
        <%= f.text_field :name %>  
   </div>  
   <div class="field">  
-        <%=  select("klass", "klass_id", Klass.all.collect {|p| [ p.name, p.id ] },  {:prompt => '--请选择班级--'})%>  
-   #    <%= f.label :klass %><br />  
-   #    <%= f.text_field :klass %>  
-  </div> 
-
+    <%= f.select :klass_id, Klass.all.collect{|p| [ p.klass_name, p.id ] },  {:prompt => '--请选择班级--'}%>
+   </div>
   <div class="actions">  
        <%= f.submit "提交"%>  
   </div>  
