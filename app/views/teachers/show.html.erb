@@ -1,0 +1,15 @@
+
+<p class="notice"><%= notice%></p>
+
+<p>
+<b>教师姓名：</b>
+<%= @teacher.name%>
+<b>教师年龄：</b>
+<%= @teacher.age%>
+<b>工号：</b>
+<%= @teacher.work_number%>
+</p>
+
+<%= link_to "修改", edit_teacher_path(@teacher)%>
+<%= link_to "返回教师管理页面", teachers_path%>
+<%= link_to "返回主页面", root_path%>

@@ -35,7 +35,7 @@ class KlassesController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @klass.destroy
     redirect_to klasses_url
   end
