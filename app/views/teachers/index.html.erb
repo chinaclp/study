@@ -1,10 +1,14 @@
 
 <table>
+  <thead>
+    <td>教师管理页面</td>
+  </thead>
+  <body>
   <tr>
     <td>姓名</td>
     <td>年龄</td>
     <td>工号</td>
-  <tr>
+  </tr>
     <% @teachers.each do |teacher|%>
       <tr>
         <td><%= teacher.name%></td>
@@ -14,7 +18,9 @@
         <td><%= link_to '删除',teacher_path(:id => teacher.id),:method => 'delete'%></td>
       </tr>
     <% end %>
-
+    </body>
   </table>
   <%= link_to '新建',new_teacher_path%>
   <%= link_to '返回主页面',root_path%>
+
+  <%= paginate @teachers%>

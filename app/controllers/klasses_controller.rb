@@ -3,7 +3,7 @@ class KlassesController < ApplicationController
   before_filter :per_load
 
   def index
-    @klasses = Klass.all
+    @klasses = Klass.order("id").page(params[:page]).per(5)
   end
 
   def new

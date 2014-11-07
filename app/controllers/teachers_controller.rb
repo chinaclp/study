@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
   before_filter :per_load
 
   def index
-    @teachers = Teacher.all
+    @teachers = Teacher.order("id desc").page(params[:page]).per(3)
   end
 
   def new
