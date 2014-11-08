@@ -11,3 +11,29 @@
  *= require_self
  *= require_tree .
  */
+<html>
+
+  <thead>
+    <title>hello,welcome to beijing</title>
+    .a { background-color: gray;}
+    #c { border-collapse: collapse;}
+  </thead>
+
+  <tbody>
+
+    <table class="c">
+
+       <tr>
+         <th id="a">表头</th>
+         <th id="a">背景</th>
+       </tr>
+
+       <tr>
+         <td>my name</td>
+         <td>is chinacheng</td>
+       </tr>
+    </table>
+
+  </tbody>
+
+</html>
