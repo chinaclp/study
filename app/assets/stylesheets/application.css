@@ -13,27 +13,32 @@
  */
 <html>
 
-  <thead>
+  <head>
     <title>hello,welcome to beijing</title>
     .a { background-color: gray;}
     #c { border-collapse: collapse;}
-  </thead>
+  </head>
 
-  <tbody>
+  <body>
 
     <table class="c">
 
+       <thead> 
        <tr>
          <th id="a">表头</th>
          <th id="a">背景</th>
        </tr>
+       </thead>
 
+       <tbody>
        <tr>
          <td>my name</td>
          <td>is chinacheng</td>
        </tr>
+       </tbody>
+
     </table>
 
-  </tbody>
+  </body>
 
 </html>
