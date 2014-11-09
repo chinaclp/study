@@ -7,6 +7,8 @@ Study::Application.routes.draw do
 
   resources :teachers
 
+  resources :klassteachers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

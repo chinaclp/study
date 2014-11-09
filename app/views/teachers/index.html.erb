@@ -1,26 +1,34 @@
 
-<table>
+<table class="teacher">
   <thead>
-    <td>教师管理页面</td>
+    <tr> 
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>工号</th>
+      <th>操作</th>
+    </tr> 
   </thead>
-  <body>
-  <tr>
-    <td>姓名</td>
-    <td>年龄</td>
-    <td>工号</td>
-  </tr>
+
+  <tbody>
+    <tr>
+    </tr>
     <% @teachers.each do |teacher|%>
       <tr>
         <td><%= teacher.name%></td>
         <td><%= teacher.age%></td>
         <td><%= teacher.work_number%></td>
-        <td><%= link_to '修改',edit_teacher_path(:id =>teacher.id),:method => 'get'%></td>
-        <td><%= link_to '删除',teacher_path(:id => teacher.id),:method => 'delete'%></td>
+        <td>
+          <%= link_to '修改',edit_teacher_path(:id =>teacher.id),:method => 'get'%>
+          <%= link_to '删除',teacher_path(:id => teacher.id),:method => 'delete'%>
+        </td>
       </tr>
     <% end %>
-    </body>
-  </table>
+  </tbody>
+</table>
+
+<div class="operate"> 
   <%= link_to '新建',new_teacher_path%>
   <%= link_to '返回主页面',root_path%>
+</div> 
 
-  <%= paginate @teachers%>
+<%= paginate @teachers%>

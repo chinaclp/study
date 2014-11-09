@@ -1,23 +1,31 @@
 <h1>hello!</h1>
- 
-<table border="1">
-  <tr>
-    <th>name</th> 
-    <th>klass</th> 
-  </tr> 
-  
-  <% @users.each do |user| %>
-     <tr>
+
+<table class="teacher">
+  <thead>
+    <tr>
+      <th>姓名</th> 
+      <th>班级</th> 
+      <th>操作</th>
+    </tr> 
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
         <td><%= user.name %></td>
         <td><%= user.klass.klass_name if user.klass %></td> 
-        <td><%= link_to '修改',edit_user_path(:id => user.id),:method => 'get'%></td>
-        <td><%= link_to '删除',user_path(:id => user.id),:method => 'delete'%></td>
-     </tr>
-  <% end %>
+        <td>
+          <%= link_to '修改',edit_user_path(:id => user.id),:method => 'get'%>
+          <%= link_to '删除',user_path(:id => user.id),:method => 'delete'%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<%= link_to '新建', new_user_path %>
-
-<%= link_to '班级列表',klasses_path%>
-<%= link_to '返回主页面',root_path%>
+<div class="operate"> 
+  <%= link_to '新建', new_user_path %>
+  <%= link_to '班级列表',klasses_path%>
+  <%= link_to '返回主页面',root_path%>
+</div> 
 <%= paginate @users%>

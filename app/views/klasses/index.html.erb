@@ -1,19 +1,29 @@
 <h1>hello! welcome to the klass list!</h1>
 
-<table>
-  <tr>
-    <td>班级名称</td>
-  </tr>
-  <% @klasses.each do |klass|%>
-  <tr>
-    <td><%= klass.klass_name%></td>
+<table class="teacher">
+  <thead>
+    <tr>
+      <th>班级名称</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @klasses.each do |klass|%>
+      <tr>
+        <td><%= klass.klass_name%></td>
 
-    <td><%= link_to '修改', edit_klass_path(:id=>klass.id),:method=>'get'%></td>
-    <td><%= link_to '删除', klass_path(:id => klass.id),:method => 'delete'%></td>
-  </tr>
-<% end %>
-<%= link_to '新建', new_klass_path%>
-<%= link_to '返回主页面', root_path%>
+        <td>
+          <%= link_to '修改', edit_klass_path(:id=>klass.id),:method=>'get'%>
+          <%= link_to '删除', klass_path(:id => klass.id),:method => 'delete'%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
+
+<div class="operate"> 
+  <%= link_to '新建', new_klass_path%>
+  <%= link_to '返回主页面', root_path%>
+</div>
 
 <%= paginate @klasses%>

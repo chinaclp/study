@@ -11,34 +11,30 @@
  *= require_self
  *= require_tree .
  */
-<html>
+   table thead { background-color: #BFBFBF;}
+   table, td, tr, th {
+     border: 1px solid #000;
+     border-collapse:collapse;
+   }
 
-  <head>
-    <title>hello,welcome to beijing</title>
-    .a { background-color: gray;}
-    #c { border-collapse: collapse;}
-  </head>
+   td{
+   padding: 2px 5px 2px 5px;
+   }
 
-  <body>
+   .operate {
+   margin: 20px 0 0 0;
+   }
 
-    <table class="c">
+   table.teacher thead{
+   background-color: #CCCCCC;
+   color: #FFF;
+   }
 
-       <thead> 
-       <tr>
-         <th id="a">表头</th>
-         <th id="a">背景</th>
-       </tr>
-       </thead>
+   table.teacher td,
+   table.teacher tr,
+   table.teacher th{
+     border: 1px solid #000;
+   
+   }
 
-       <tbody>
-       <tr>
-         <td>my name</td>
-         <td>is chinacheng</td>
-       </tr>
-       </tbody>
 
-    </table>
-
-  </body>
-
-</html>
