@@ -1,6 +1,6 @@
-class Klassteacher < ActiveRecord::Base
+class KlassTeacher < ActiveRecord::Base
   # attr_accessible :title, :body
-    attr_accessible :klass_id, :teacher_id
+    attr_accessible :teacher_id, :klass_id
     belongs_to :teacher
     belongs_to :klass
 end

@@ -7,7 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 
-gem 'kaminari'
+gem 'kaminari'       #分页
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,7 +23,8 @@ group :assets do
 end
 
 group :development do
-  gem 'thin'
+  gem 'quiet_assets' #过滤日志
+  gem 'thin'         #rails启动服务
 end
 
 gem 'jquery-rails'
