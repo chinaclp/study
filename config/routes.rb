@@ -2,12 +2,25 @@ Study::Application.routes.draw do
 
   resources :users
 
-  resources :klasses
+  resources :klasses do
+    member do
+      get 'teachers'
+      get 'users'
+    end
+  end
 
+  resources :teachers do
+    member do
+      get 'klasses'
+    end
+  end
 
-  resources :teachers
-
-  resources :klass_teachers
+  resources :klass_teachers do
+    member do
+      get 'new_teacher'
+      get 'create_teacher'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

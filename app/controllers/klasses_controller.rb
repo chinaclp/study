@@ -2,6 +2,14 @@ class KlassesController < ApplicationController
 
   before_filter :per_load
 
+  def teachers
+    @teachers = @klass.teachers.page(params[:page]).per(5)
+  end
+
+  def users
+    @users = @klass.users.page(params[:page]).per(5)
+  end
+
   def index
     @klasses = Klass.order("id").page(params[:page]).per(5)
   end

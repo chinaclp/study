@@ -2,6 +2,9 @@ class TeachersController < ApplicationController
 
   before_filter :per_load
 
+  def klasses
+    @klasses = @teacher.klasses.page(params[:page]).per(10)
+  end
   def index
     @teachers = Teacher.order("id desc").page(params[:page]).per(3)
   end

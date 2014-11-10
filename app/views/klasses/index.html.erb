@@ -13,8 +13,10 @@
         <td><%= klass.klass_name%></td>
 
         <td>
-          <%= link_to '修改', edit_klass_path(:id=>klass.id),:method=>'get'%>
-          <%= link_to '删除', klass_path(:id => klass.id),:method => 'delete'%>
+          <%= link_to '修改', edit_klass_path(:id=>klass.id) %>
+          <%= link_to '删除', klass_path(:id => klass.id),:method => 'delete' %>
+          <%= link_to '查看所有老师', teachers_klass_path( klass) %>
+          <%= link_to '查看所有学生', users_klass_path( klass) %>
         </td>
       </tr>
     <% end %>

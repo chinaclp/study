@@ -1,0 +1,20 @@
+<h3><%= @teacher.name%>所在的班级</h3>
+<%= link_to '返回',teachers_path%>
+<%= link_to '添加班级',new_klass_teacher_path(:teacher_id => @teacher.id)%>
+<table> 
+
+  <thead> 
+    <tr> 
+      <th> 班级名称 </th> 
+    </tr>    
+  </thead> 
+
+  <tbody> 
+    <% @klasses.each do |klass| %>
+      <tr>
+        <td><%= klass.klass_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
