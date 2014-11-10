@@ -1,5 +1,7 @@
 Study::Application.routes.draw do
 
+  resources :catalogs
+
   resources :users
 
   resources :klasses do
