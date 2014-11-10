@@ -1,0 +1,44 @@
+<html> 
+
+  <head>
+
+    <h1>hello!</h1>
+
+  </head>   
+
+  <body> 
+
+    <table>
+      <thead>
+        <tr>
+          <th>标题</th> 
+          <th>摘要</th> 
+          <th>内容</th>
+          <th>操作</th> 
+        </tr> 
+      </thead>
+
+      <tbody>
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <td><%= article.summary %></td>
+            <td><%= article.content.html_safe %></td>
+            <td>
+              <%= link_to '修改',edit_article_path(:id => article.id),:method => 'get'%>
+              <%= link_to '删除',article_path(:id => article.id),:method => 'delete'%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </body> 
+
+  </table>
+
+  <div> 
+    <%= link_to '新建', new_article_path %>
+    <%= link_to '返回主页面',root_path%>
+  </div> 
+
+</html> 

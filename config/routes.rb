@@ -1,6 +1,9 @@
 Study::Application.routes.draw do
 
+  mount UeditorRails::Engine => '/ueditor'
+
   resources :catalogs
+  resources :articles
 
   resources :users
 

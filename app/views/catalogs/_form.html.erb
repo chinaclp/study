@@ -3,18 +3,18 @@
     <div id="errorExplanation">
       <h2><%= pluralize(@catalog.errors.count, "error") %> prohibited this catalog from being saved:</h2>  
       <ul>  
-      <% @catalog.errors.full_messages.each do |msg| %>  
-         <li><%= msg %></li>  
-      <% end %>  
+        <% @catalog.errors.full_messages.each do |msg| %>  
+          <li><%= msg %></li>  
+        <% end %>  
       </ul>  
     </div>  
   <% end %>
 
   <div class="field">  
-       <%= f.label "栏目名称" %><br />  
-       <%= f.text_field :name %>  
+    <%= f.label "栏目名称" %><br />  
+    <%= f.text_field :name %>  
   </div>  
   <div class="actions">  
-       <%= f.submit "提交"%>  
+    <%= f.submit "提交"%>  
   </div>  
 <% end %>
