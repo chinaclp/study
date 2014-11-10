@@ -16,9 +16,9 @@ Study::Application.routes.draw do
   end
 
   resources :klass_teachers do
-    member do
+    collection do
       get 'new_teacher'
-      get 'create_teacher'
+      post 'create_teacher'
     end
   end
 

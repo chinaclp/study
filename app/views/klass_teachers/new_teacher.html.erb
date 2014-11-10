@@ -1,0 +1,11 @@
+
+<%= form_tag create_teacher_klass_teachers_path ,:method => :post do  %>
+  <%= hidden_field_tag :klass_id,@klass.id %>
+  <% @teachers.each do |teacher|%>
+    <div> 
+      <%= check_box_tag "teacher_ids[]", teacher.id %>
+      <%= teacher.name %>
+    </div> 
+  <% end %>
+ <%= submit_tag "提交" %>
+<% end %>
