@@ -13,6 +13,37 @@
 <%= @article.content.html_safe %>
 </p> 
 
+<p>
+<b>评论：</b>
+<% @article.comments.each_with_index do |comment, index| %>
+  <div> 
+    <td><%= index + 1 %></td> 
+    <td><%= comment.content %></td> 
+  </div> 
+<%end%>
+</p> 
+
+<p>
+<b>评论：</b>
+<% @article.comments.each do |comment| %>
+  <div> 
+    <td><%= comment.content %></td> 
+  </div> 
+<%end%>
+</p> 
+
+
+<p>
+<b>添加评论</b>
+<%= form_for [@article, @comment] do |f| %> 
+  <div class="field">  
+    <%= f.label "内容" %><br />  
+    <%= f.text_area :content %>  
+  </div>
+  <%= submit_tag "提交" %>
+<% end %>
+</p> 
+
 
 <%= link_to '修改',edit_article_path(@article)  %>
 <%= link_to '返回文章主页面',articles_path%>

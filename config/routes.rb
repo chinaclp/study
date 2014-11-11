@@ -3,7 +3,14 @@ Study::Application.routes.draw do
   mount UeditorRails::Engine => '/ueditor'
 
   resources :catalogs
-  resources :articles
+
+  resources :articles do
+    resources :comments
+  end
+
+  resources :topics do
+    resources :comments
+  end
 
   resources :users
 
