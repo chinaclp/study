@@ -24,6 +24,7 @@ Study::Application.routes.draw do
   resources :teachers do
     member do
       get 'klasses'
+      get 'students'
     end
   end
 

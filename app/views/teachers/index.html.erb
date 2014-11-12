@@ -21,6 +21,7 @@
           <%= link_to '修改',edit_teacher_path(:id =>teacher.id),:method => 'get'%>
           <%= link_to '删除',teacher_path(:id => teacher.id),:method => 'delete'%>
           <%= link_to '查询所有班级',klasses_teacher_path(teacher)%>
+          <%= link_to '查看所有学生', students_teacher_path(teacher) %>
         </td>
       </tr>
     <% end %>
