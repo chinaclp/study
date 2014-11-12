@@ -12,6 +12,8 @@ gem 'kaminari'       #分页
 # 百度富文本编辑器
 gem 'ueditor_rails'
 
+gem 'devise'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

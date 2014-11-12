@@ -1,5 +1,7 @@
 Study::Application.routes.draw do
 
+  devise_for :users
+
   mount UeditorRails::Engine => '/ueditor'
 
   resources :catalogs
