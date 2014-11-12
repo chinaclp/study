@@ -25,6 +25,15 @@
    margin: 20px 0 0 0;
    }
 
+   .head{
+   height: 70px;  
+   }
+
+   .foot{
+   height: 60;
+   text-align: center;
+   }
+
    table.teacher thead{
    background-color: #CCCCCC;
    color: #000;

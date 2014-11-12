@@ -10,7 +10,23 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+   
+    <div class="head"> 
+      <% if current_user %>
+        <p>您好 <%= current_user.email %>!</p>
+        <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
+        <%= link_to('修改密碼', edit_registration_path(:user)) %>
+      <% else %>
+        <%= link_to('註冊', new_registration_path(:user)) %> |
+        <%= link_to('登入', new_session_path(:user)) %>
+      <% end %>
+    </div> 
+
     <%= yield %>
+
+    <div class="foot">
+      <p>版权所有</p> 
+    </div> 
 
 
   </body>
