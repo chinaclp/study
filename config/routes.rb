@@ -12,12 +12,12 @@ Study::Application.routes.draw do
     resources :comments
   end
 
-  resources :users
+  resources :students
 
   resources :klasses do
     member do
       get 'teachers'
-      get 'users'
+      get 'students'
     end
   end
 
@@ -83,7 +83,7 @@ Study::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  #  root :to => 'users#index'
+  #  root :to => 'students#index'
      root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"

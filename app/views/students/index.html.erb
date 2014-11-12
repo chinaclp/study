@@ -1,0 +1,31 @@
+<h1>hello!</h1>
+
+<table class="teacher">
+  <thead>
+    <tr>
+      <th>姓名</th> 
+      <th>班级</th> 
+      <th>操作</th>
+    </tr> 
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.klass.klass_name if student.klass %></td> 
+        <td>
+          <%= link_to '修改',edit_student_path(:id => student.id),:method => 'get'%>
+          <%= link_to '删除',student_path(:id => student.id),:method => 'delete'%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="operate"> 
+  <%= link_to '新建', new_student_path %>
+  <%= link_to '班级列表',klasses_path%>
+  <%= link_to '返回主页面',root_path%>
+</div> 
+<%= paginate @students%>

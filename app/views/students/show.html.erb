@@ -1,0 +1,15 @@
+<p class="notice"><%= notice %></p>
+
+<p>  
+  <b>Name:</b>  
+  <%= @student.name %>  
+</p> 
+
+<p>  
+  <b>Klass:</b>  
+  <%= @student.klass.klass_name %>  
+</p> 
+
+<%= link_to 'Edit', edit_student_path(@student) %> |  
+<%= link_to '返回学生管理', students_path %>
+<%= link_to '返回主页面', root_path%>

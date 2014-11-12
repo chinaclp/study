@@ -6,8 +6,8 @@ class KlassesController < ApplicationController
     @teachers = @klass.teachers.page(params[:page]).per(5)
   end
 
-  def users
-    @users = @klass.users.page(params[:page]).per(5)
+  def students
+    @students = @klass.students.page(params[:page]).per(5)
   end
 
   def index
