@@ -9,39 +9,50 @@
   <body>
 
     <div class="top"> 
-      <div class="part"> 
+
+      <div class="seat-a"> 
         <div class="title"> 
-          <a href='' class="tab">
-            <i>设为首页</i>
-          </a> 
+          <a href='' class="tab">设为首页</a> 
         </div> 
         <div class="title"> 
-          <a href='' class="tab">
-            <i>手机版</i>
-          </a> 
+          <a href='' class="tab">手机版</a> 
         </div> 
         <div class="title"> 
-          <a href='' class="tab">
-            <i>Pad版</i>
-          </a> 
+          <a href='' class="tab">Pad版</a>
         </div> 
-      </div> 
-      <div class="right"> 
+      </div>
+
+      <div class="seat-b title"> 
         <% if current_user %>
-          <p>您好 <%= current_user.email %>!</p>
-          <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
-          <%= link_to('修改密碼', edit_registration_path(:user)) %>
+          您好 <%= current_user.email %>!
+          <%= link_to('退出', destroy_user_session_path, :method => :delete) %>
+          <%#= link_to('修改密碼', edit_registration_path(:user)) %>
         <% else %>
           <%= link_to('註冊', new_registration_path(:user)) %> |
           <%= link_to('登入', new_session_path(:user)) %>
         <% end %>
-      </div> 
+      </div>
+
+      <div class="seat-c">
+        <div class="title"> 
+          <a href='' class="tab">微博</a> 
+        </div> 
+        <div class="title"> 
+          <a href='' class="tab">博客</a> 
+        </div> 
+        <div class="title"> 
+          <a href='' class="tab">网站导航</a>
+        </div> 
+      </div>
+
     </div> 
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    <div class="seat"> 
+      <%= yield %>
+    </div> 
 
     <div class="foot">
       <p>版权所有</p> 

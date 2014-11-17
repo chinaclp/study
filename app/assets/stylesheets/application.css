@@ -12,15 +12,33 @@
  *= require_tree .
  */
 
+body {
+  color: #333;
+  font: "SimSun","宋体","Arial Narrow",HELVETICA;
+  background: #fff;
+}
+
 .top{
   height: 41px;
   border-top: 3px solid #ff8500;
   border-bottom: 1px solid #EDEEF0;
   background-color: #FCFCFC;
+  margin: 0 auto;
 }
 
-.top .part {
-  float: left;
+.seat{
+  width: 1000px;
+  margin: 0 auto;
+}
+.seat-a{
+  padding-left: 178px;
+}
+.seat-b{
+  padding-left: 800px;
+}
+.seat-c{
+  float: right;
+  padding-right: 178px;
 }
 
 .right{
@@ -31,6 +49,7 @@
   float: left;
   font-size: 12px;
   position: relative;
+  padding: 15px 10px 0 0;
 }
 
 
@@ -44,6 +63,7 @@
   position: relative;
   z-index: 9999;
   padding: 0 2px 0 0;
+  font-size: 15px;
 }
 
 table thead { background-color: #BFBFBF;}
