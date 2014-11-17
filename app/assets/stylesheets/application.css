@@ -11,39 +11,74 @@
  *= require_self
  *= require_tree .
  */
-   table thead { background-color: #BFBFBF;}
-   table, td, tr, th {
-     border: 1px solid #000;
-     border-collapse:collapse;
-   }
 
-   td{
-   padding: 2px 5px 2px 5px;
-   }
+.top{
+  height: 41px;
+  border-top: 3px solid #ff8500;
+  border-bottom: 1px solid #EDEEF0;
+  background-color: #FCFCFC;
+}
 
-   .operate {
-   margin: 20px 0 0 0;
-   }
+.top .part {
+  float: left;
+}
 
-   .head{
-   height: 70px;  
-   }
+.right{
+  float: right;
+}
 
-   .foot{
-   height: 60;
-   text-align: center;
-   }
+.top .title {
+  float: left;
+  font-size: 12px;
+  position: relative;
+}
 
-   table.teacher thead{
-   background-color: #CCCCCC;
-   color: #000;
-   }
 
-   table.teacher td,
-   table.teacher tr,
-   table.teacher th{
-     border: 1px solid #000;
-   
-   }
+.top .title .tab {
+  border: 1px solid #FCFCFC;
+  border-width: 0 1px;
+  color: #4C4C4C;
+  display: inline-block;
+  line-height: 16px;
+  cursor: pointer;
+  position: relative;
+  z-index: 9999;
+  padding: 0 2px 0 0;
+}
+
+table thead { background-color: #BFBFBF;}
+table, td, tr, th {
+  border: 1px solid #000;
+  border-collapse:collapse;
+}
+
+td{
+  padding: 2px 5px 2px 5px;
+}
+
+.operate {
+  margin: 20px 0 0 0;
+}
+
+.head{
+  height: 70px;  
+}
+
+.foot{
+  height: 60;
+  text-align: center;
+}
+
+table.teacher thead{
+  background-color: #CCCCCC;
+  color: #000;
+}
+
+table.teacher td,
+table.teacher tr,
+table.teacher th{
+  border: 1px solid #000;
+
+}
 
 
