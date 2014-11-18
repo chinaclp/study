@@ -4,15 +4,14 @@ Study::Application.routes.draw do
 
   mount UeditorRails::Engine => '/ueditor'
 
+    resources :articles do
+      resources :comments
+    end
+    resources :topics do
+      resources :comments
+    end
+
   resources :catalogs
-
-  resources :articles do
-    resources :comments
-  end
-
-  resources :topics do
-    resources :comments
-  end
 
   resources :students
 
@@ -87,7 +86,7 @@ Study::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   #  root :to => 'students#index'
-     root :to => 'home#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

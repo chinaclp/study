@@ -9,7 +9,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
+    @article =Article.new(params[:article])
+    @article.user_id = current_user.id
     if @article.save
       redirect_to :action => :index
     else

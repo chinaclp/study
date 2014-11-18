@@ -18,7 +18,7 @@
 
   <div> 
     <%= f.label "栏目" %><br />  
-    <%= f.select :catalog_id, Catalog.all.collect{|p| [ p.name, p.id ] },  {:prompt => '--请选择班级--'}%>
+    <%= f.select :catalog_id, Catalog.all.collect{|p| [ p.name, p.id ] },  {:prompt => '--请选择栏目--'}%>
   </div> 
 
   <div class="field">  
