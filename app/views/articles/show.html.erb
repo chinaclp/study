@@ -1,41 +1,58 @@
-<p>
-<b>标题：</b>
-<%= @article.title %>
+
+<html> 
+  <head>
+    <title>     
+    </title>
+  </head>
+  <body> 
+    <p>
+    <b>标题：</b>
+    <%= @article.title %>
+    </p> 
+
+    <p>
+    <b>摘要：</b>
+    <%= @article.summary %>
+    </p>
+
+    <p>
+    <b>内容：</b>
+    <%= @article.content.html_safe %>
+    </p> 
+
+    <p>
+    <b>评论：</b>
+    <% @article.comments.each_with_index do |comment, index| %>
+      <div> 
+        <td><%= index + 1 %></td> 
+        <td><%= comment.content %></td> 
+      </div> 
+    <%end%>
+    </p> 
+
+    <p>
+    <b>评论：</b>
+    <% @article.comments.each do |comment| %>
+      <div> 
+        <td><%= comment.content %></td> 
+      </div> 
+    <%end%>
+    </p> 
+
+    <p>
+    <b>评论三</b>
+    <script type="text/javascript">
+      $.ready( function(){
+          $('#new_comment').on('ajax:success',function(ex,e){
+            alert(1);
+            }); 
+          });
+</script>
 </p> 
-
-<p>
-<b>摘要：</b>
-<%= @article.summary %>
-</p>
-
-<p>
-<b>内容：</b>
-<%= @article.content.html_safe %>
-</p> 
-
-<p>
-<b>评论：</b>
-<% @article.comments.each_with_index do |comment, index| %>
-  <div> 
-    <td><%= index + 1 %></td> 
-    <td><%= comment.content %></td> 
-  </div> 
-<%end%>
-</p> 
-
-<p>
-<b>评论：</b>
-<% @article.comments.each do |comment| %>
-  <div> 
-    <td><%= comment.content %></td> 
-  </div> 
-<%end%>
-</p> 
-
 
 <p>
 <b>添加评论</b>
-<%= form_for [@article, @comment] do |f| %> 
+<%= form_for [@article, @comment], :remote => true do |f| %> 
   <div class="field">  
     <%= f.label "内容" %><br />  
     <%= f.text_area :content %>  
@@ -45,6 +62,10 @@
 </p> 
 
 
+
 <%= link_to '修改',edit_article_path(@article)  %>
 <%= link_to '返回文章主页面',articles_path%>
-<%= link_to '返回主页面',root_path%>
+<%= link_to '返回主页面',root_path%>    
+  </body> 
+</html> 
+

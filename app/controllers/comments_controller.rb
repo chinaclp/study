@@ -7,6 +7,9 @@ class CommentsController < ApplicationController
       @host = Article.find_by_id(params[:article_id])
     end
     @host.comments.create(params[:comment])
-    redirect_to @host
+    respond_to do |format|
+      format.html {redirect_to @host}
+      format.json { render :json => @host} # <- 这里
+    end
   end
 end
