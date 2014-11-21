@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @host.comments.create(params[:comment])
     respond_to do |format|
       format.html {redirect_to @host}
-      format.json { render :json => @host} # <- 这里
+      format.json { render :json => @host.comments.last} # <- 这里
     end
   end
 end

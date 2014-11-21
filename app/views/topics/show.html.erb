@@ -20,7 +20,7 @@
 
 <p>
 <b>添加评论</b>
-<%= form_for [@topic, @comment] do |f| %> 
+<%= form_for [@topic, @comment], :remote => true, :html => {:'data-type' => 'json'} do |f| %> 
   <div class="field">  
     <%= f.label "内容" %><br />  
     <%= f.text_area :content %>  
@@ -29,6 +29,23 @@
 <% end %>
 </p> 
 
+    <p>
+    <b>评论:</b>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('#new_comment').on('ajax:success',function(ex,e){
+            alert(1);
+            console.debug(ex);
+            console.debug(e);
+            console.debug(e['content']);
+            $("ul").append("<li>" + e['id'] + "." +  e['content'] + "</li>");
+          });
+          });
+</script>
+</p> 
+
+<ul>
+    </ul>
 
 
 <%= link_to '修改',edit_topic_path(@topic)  %>
