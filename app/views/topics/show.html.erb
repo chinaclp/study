@@ -38,7 +38,7 @@
             console.debug(ex);
             console.debug(e);
             console.debug(e['content']);
-            $("ul").append("<li>" + e['id'] + "." +  e['content'] + "</li>");
+            $("ul").append("<li>"+ "用户："+ e['user_name'] +".  评论：" +  e['content'] +".  "+ e['time_now'] + "</li>");
           });
           });
 </script>

@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
     elsif params[:article_id]
       @host = Article.find_by_id(params[:article_id])
     end
-    @host.comments.create(params[:comment])
+    comment = @host.comments.create(params[:comment])
+    comment.update_attributes(user_id: current_user.id)#添加用户id
     respond_to do |format|
       format.html {redirect_to @host}
-      format.json { render :json => @host.comments.last} # <- 这里
+      format.json { render :json => {user_name: comment.user.name, content: comment.content, time_now: comment.created_at}} # <- 这里
     end
   end
 end
