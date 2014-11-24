@@ -1,0 +1,4 @@
+  <li id="comment_<%= comment.id%>">
+  <%= comment.content %>
+  <%= link_to "删除", article_comment_path(id: "del_#{comment.id}"), :method => 'delete', class: del_button, remote: true, format: json %>
+  </li> 
