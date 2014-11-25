@@ -24,15 +24,16 @@
 </p> 
 
 
-    <p> 
-    <script type="text/javascript">
-          $(document).ready(function(){
-               $(".del_button").on('ajax:success',function(ex,e){
-                 $("comment_"+e[id]).remove();
-    });
-  })
-  </script>
-   </p> 
+<p> 
+<script type="text/javascript">
+  $(document).ready(function(){
+      $(".del_button").on('ajax:success',function(ex,e){
+        alert(e['id']);
+        $("#comment_"+e['id']).remove();
+        });
+      })
+</script>
+</p> 
 
 <p>
 <b>添加评论</b>
@@ -57,14 +58,14 @@
         $("ul").append("<li>"+ "用户："+ e['user_name'] +".  评论：" +  e['content'] +".  "+ e['time_now'] + "</li>");
         });
       });
-    </script>
-    </p> 
+</script>
+</p> 
 
 <ul> 
-    <input type="hidden" value="46" name="comment_id"> 
-    <td>  
-      <input id="bt_destroy_cib" type="button" value="删除">  
-    </td>  
+  <input type="hidden" value="46" name="comment_id"> 
+  <td>  
+    <input id="bt_destroy_cib" type="button" value="删除">  
+  </td>  
 </ul> 
 
 

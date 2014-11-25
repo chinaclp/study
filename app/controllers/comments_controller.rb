@@ -16,11 +16,13 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find_by_id(params[:id])
-   # @comment.user_id == current_user.id
+    # @comment.user_id == current_user.id
+    p "11111111111"
     @comment.destroy
     respond_to do |format|
-      format.html {redirect_to @host}
-      format.json { render :json => {id: id}} # <- 这里
+      format.html {redirect_to @comment.host}
+      format.json { render :json => {id: @comment.id}} # <- 这里
+    end
   end
 
 end

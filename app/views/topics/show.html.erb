@@ -12,11 +12,22 @@
 <b>评论：</b>
 <% @topic.comments.each do |comment| %>
   <div> 
-    <td><%= comment.content %></td> 
+    <%= render partial: "info", locals: {comment: comment} %>
   </div> 
 <%end%>
 </p> 
 
+
+<p> 
+<script type="text/javascript">
+  $(document).ready(function(){
+      $(".del_button").on('ajax:success',function(ex,e){
+        alert(e['id']);
+        $("#comment_"+e['id']).remove();
+        });
+      })
+</script>
+</p> 
 
 <p>
 <b>添加评论</b>

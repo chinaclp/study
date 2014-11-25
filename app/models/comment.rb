@@ -4,4 +4,15 @@ class Comment < ActiveRecord::Base
   belongs_to :article
   belongs_to :topic
   belongs_to :user
+
+  def host
+    case host_type
+    when "Article"
+      return Article.find_by_id(host_id)
+    when "Topic"
+      return Topic.find_by_id(host_id)
+    end
+  end
+
 end
+
