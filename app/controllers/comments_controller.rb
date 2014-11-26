@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find_by_id(params[:id])
     # @comment.user_id == current_user.id
-    p "11111111111"
     @comment.destroy
     respond_to do |format|
       format.html {redirect_to @comment.host}
