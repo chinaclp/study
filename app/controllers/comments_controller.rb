@@ -8,7 +8,11 @@ class CommentsController < ApplicationController
     end
     comment = @host.comments.create(params[:comment])
     comment.update_attributes(user_id: current_user.id)#添加用户id
-    render partial: "articles/info", locals: {comment: comment, article: @host}
+    if params[:article_id]
+      render partial: "/articles/info", locals: {comment: comment, article: @host}
+    elsif params[:topic_id]
+      render partial: "/topics/info", locals: {comment: comment, topic: @host}
+    end
   #  respond_to do |format|
    #   format.html {redirect_to @host}
      # format.json { render :json => {user_name: comment.user.name, content: comment.content, time_now: comment.created_at}} # <- 这里

@@ -4,11 +4,20 @@ Study::Application.routes.draw do
 
   mount UeditorRails::Engine => '/ueditor'
 
+  resources :users
+
     resources :articles do
       resources :comments
+      member do
+        get 'user_articles'
+      end
     end
+
     resources :topics do
       resources :comments
+      member do
+        get 'user_topics'
+      end
     end
 
   resources :catalogs

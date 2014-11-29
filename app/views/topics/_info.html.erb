@@ -1,5 +1,10 @@
 
   <li id="comment_<%= comment.id%>">
+  <b>用户：</b>
+  <%= link_to comment.user.name, user_path(:id => comment.user.id) %>
+  <b>评论：</b> 
   <%= comment.content %>
-  <%= link_to "删除", topic_comment_path(topic_id: @topic.id, id: comment.id, format: "json"), :method => 'delete', class: "del_button", id: "del_#{comment.id}", remote: true%>
+  <b>时间：</b>
+  <%= comment.created_at %>
+  <%= link_to "删除", topic_comment_path(topic_id: topic.id, id: comment.id, format: "json"), :method => 'delete', class: "del_button", id: "del_#{comment.id}", remote: true%>
   </li> 

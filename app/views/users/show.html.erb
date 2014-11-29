@@ -1,0 +1,14 @@
+
+<p>
+<b>用户名：</b>
+<%=  @user.name %>
+</p> 
+<p>
+<b>文章数量：</b>
+<%= link_to @user.articles_number, user_articles_article_path(:id => @user.id) %>
+</p> 
+
+<p>
+<b>栏目数量：</b>
+<%= link_to @user.topics_number, user_topics_topic_path(:id => @user.id)%>
+</p> 

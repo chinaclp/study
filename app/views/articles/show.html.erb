@@ -4,6 +4,16 @@
 </p> 
 
 <p>
+<b>作者：</b>
+<%= link_to @article.user.name, user_path(:id => @article.user.id) %>
+</p> 
+
+<p>
+<b>评论数量：</b>
+<%= @article.comments_number %>
+</p> 
+
+<p>
 <b>摘要：</b>
 <%= @article.summary %>
 </p>

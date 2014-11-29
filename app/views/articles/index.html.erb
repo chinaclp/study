@@ -13,6 +13,8 @@
         <tr>
           <th>标题</th> 
           <th>摘要</th> 
+          <th>作者</th>
+          <th>评论数量</th> 
           <th>操作</th> 
         </tr> 
       </thead>
@@ -25,6 +27,8 @@
               <%= link_to '详情',article_path(:id => article.id) %>
             </td>
             <td><%= article.summary %></td>
+            <td><%= article.user.name if article.user %></td>     <!-- if判断是否有用户名-->
+            <td><%= article.comments_number %></td>
             <td>
               <%= link_to '修改',edit_article_path(:id => article.id),:method => 'get'%>
               <%= link_to '删除',article_path(:id => article.id),:method => 'delete'%>

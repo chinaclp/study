@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
 
+  def user_articles
+    @articles = Article.where(user_id: params[:id]).page(params[:page]).per(20)
+  end
+
   def index
     @articles = Article.all
   end

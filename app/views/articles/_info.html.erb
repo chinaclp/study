@@ -1,6 +1,6 @@
   <li id="comment_<%= comment.id%>">
   <b>用户：</b>
-  <%= comment.user.name %>
+  <%= link_to comment.user.name, user_path(:id => comment.user.id) %>
   <b>评论：</b> 
   <%= comment.content %>
   <b>时间：</b>
