@@ -13,7 +13,16 @@ class User < ActiveRecord::Base
   end
 
   has_many :articles
+  has_many :topics
   has_many :comments
+
+  def articles_number
+    self.articles.count
+  end
+
+  def topics_number
+    self.topics.count
+  end
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me

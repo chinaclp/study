@@ -4,5 +4,8 @@ class Article < ActiveRecord::Base
   has_many :comments, :as => :host, :dependent => :destroy
   belongs_to :user
 
+  def comments_number
+    self.comments.count
+  end
 
 end

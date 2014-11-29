@@ -1,4 +1,3 @@
-
 <p>
 <b>标题：</b>
 <%= @article.title %>
@@ -19,22 +18,10 @@
 <ul>
 <% @article.comments.each do |comment| %>
   <div> 
-    <%= render partial: "info", locals: {comment: comment} %>
+    <%= render partial: "articles/info", locals: {comment: comment, article: @article} %>
   </div> 
 <%end%> 
 </ul> 
-</p> 
-
-
-<p> 
-<script type="text/javascript">
-  $(document).ready(function(){
-      $(".del_button").on('ajax:success',function(ex,e){
-        alert(e['id']);
-        $("#comment_"+e['id']).remove();
-        });
-      })
-</script>
 </p> 
 
 <p>
@@ -48,23 +35,21 @@
 <% end %>
 </p> 
 
-<p>
-<b>评论三</b>
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#new_comment').on('ajax:success',function(ex,e){
-        alert(1);
-        console.debug(ex);
-        console.debug(e);
-        console.debug(e['content']);
-        $("ul").append("<li>"+ "用户："+ e['user_name'] +"评论：" +  e['content'] +"时间："+ e['time_now'] + "</li>");
-        });
-      });
-</script>
-</p> 
-
-
 <%= link_to '修改',edit_article_path(@article)  %>
 <%= link_to '返回文章主页面',articles_path%>
 <%= link_to '返回主页面',root_path%>    
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $(".del_button").on('ajax:success',function(ex,e){
+        $("#comment_"+e['id']).remove();
+        });
+
+      $('#new_comment').on('ajax:complete',function(ex,e){
+      //  $("ul").append("<li>"+ "用户："+ e['user_name'] +"评论：" +  e['content'] +"时间："+ e['time_now'] + "</li>");
+          $("ul").append(e['responseText']);
+        });
+      })
+</script>
+
 
