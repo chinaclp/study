@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+  layout "manager"
   def create
     if params[:topic_id]
       @host = Topic.find_by_id(params[:topic_id])

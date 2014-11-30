@@ -45,5 +45,12 @@
     <%= link_to '新建', new_article_path %>
     <%= link_to '返回主页面',root_path%>
   </div> 
+  <%= form_tag articles_path, :method => :get do %> 
+  <div class="field"> 
+    <%= label_tag "查询关键字" %><br />  
+    <%= text_field_tag :content %>  
+  </div>
+  <%= submit_tag "提交" %>
+<% end %>
 
 </html> 

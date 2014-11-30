@@ -1,5 +1,6 @@
 class TeachersController < ApplicationController
 
+  layout "manager"
   before_filter :per_load
 
   def klasses

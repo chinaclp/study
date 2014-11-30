@@ -1,2 +1,0 @@
-class BackController < ApplicationController
-end

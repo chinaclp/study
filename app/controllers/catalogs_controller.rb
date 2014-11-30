@@ -1,5 +1,7 @@
 class CatalogsController < ApplicationController
 
+  layout "manager"
+
   def index
     @catalogs = Catalog.all
   end

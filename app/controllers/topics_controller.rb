@@ -1,5 +1,7 @@
 class TopicsController < ApplicationController
 
+  layout "manager"
+
   def user_topics
     @topics = Topic.where(user_id: params[:id]).page(params[:page]).per(20)
   end

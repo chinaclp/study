@@ -4,6 +4,7 @@ Study::Application.routes.draw do
 
   mount UeditorRails::Engine => '/ueditor'
 
+  resources :manager, :only => [:index]
   resources :users
 
     resources :articles do

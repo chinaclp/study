@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>后台管理</title>
+    <%= stylesheet_link_tag    "manager", :media => "all" %>
+    <%= javascript_include_tag "manager" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <div class="top"> 
+        <% if current_user %>
+          您好 <%= current_user.name %>!
+          <%= link_to('退出', destroy_user_session_path, :method => :delete) %>
+          <%#= link_to('修改密碼', edit_registration_path(:user)) %>
+        <% else %>
+          <%= link_to('登入', new_session_path(:user)) %>
+        <% end %>
+    </div> 
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div class="overall"> 
+      <ul class="part_one"> 
+        <li class="part_one_one"><%= link_to '学生管理', students_path%></li> 
+        <li class="part_one_one"><%= link_to '班级管理', klasses_path%></li> 
+        <li class="part_one_one"><%= link_to '教师管理', teachers_path%></li>
+        <li class="part_one_one"><%= link_to '栏目管理', catalogs_path%></li> 
+        <li class="part_one_one"><%= link_to '文章管理', articles_path%></li> 
+        <li class="part_one_one"><%= link_to '主题管理', topics_path%></li> 
+        <li class="part_one_one"><%= link_to '后台管理', manager_index_path%></li> 
+      </ul> 
+      <div class="part_two"> 
+        <%= yield %>
+      </div> 
+    </div> 
+
+    <div class="foot">
+      <p>版权所有</p> 
+    </div> 
+
+
+  </body>
+</html>

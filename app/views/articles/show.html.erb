@@ -39,7 +39,7 @@
 <%= form_for [@article, @comment], :remote => true, :html => {:'data-type' => 'json'} do |f| %> 
   <div class="field">  
     <%= f.label "内容" %><br />  
-    <%= f.text_area :content %>  
+    <%= f.text_area :content, :size => "100x10" %>  
   </div>
   <%= submit_tag "提交" %>
 <% end %>

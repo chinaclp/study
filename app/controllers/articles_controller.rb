@@ -1,11 +1,19 @@
 class ArticlesController < ApplicationController
 
+  layout "manager"
+
+  before_filter :authenticate_user!, except: [:show, :index]
+
   def user_articles
     @articles = Article.where(user_id: params[:id]).page(params[:page]).per(20)
   end
 
   def index
-    @articles = Article.all
+    if params[:content].blank?
+      @articles = Article.order('id desc').page(params[:page]).per(5)
+    elsif
+      @articles = Article.where("title like ? or summary like ? or content like ? ", "%#{params[:content]}%","%#{params[:content]}%", "%#{params[:content]}%")
+    end
   end
 
   def new
@@ -25,6 +33,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new
+    render :layout => "application"
   end
 
   def edit
@@ -33,11 +42,11 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-      if @article.update_attributes(params[:article])  
-         redirect_to(@article, :notice => 'User was successfully updated.')
-      else
-         render :action => "edit"
-      end
+    if @article.update_attributes(params[:article])  
+      redirect_to(@article, :notice => 'User was successfully updated.')
+    else
+      render :action => "edit"
+    end
 
   end
 
