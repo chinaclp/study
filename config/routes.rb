@@ -5,21 +5,27 @@ Study::Application.routes.draw do
   mount UeditorRails::Engine => '/ueditor'
 
   resources :manager, :only => [:index]
-  resources :users
 
-    resources :articles do
-      resources :comments
-      member do
-        get 'user_articles'
-      end
+  resources :users do
+    member do            #member实例定义实例方法
+      get 'face'
+      put 'upload'
     end
+  end
 
-    resources :topics do
-      resources :comments
-      member do
-        get 'user_topics'
-      end
+  resources :articles do
+    resources :comments
+    member do
+      get 'user_articles'
     end
+  end
+
+  resources :topics do
+    resources :comments
+    member do
+      get 'user_topics'
+    end
+  end
 
   resources :catalogs
 
@@ -40,7 +46,7 @@ Study::Application.routes.draw do
   end
 
   resources :klass_teachers do
-    collection do
+    collection do                    #collection定义类方法
       get 'new_teacher'
       post 'create_teacher'
     end

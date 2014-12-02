@@ -12,3 +12,13 @@
 <b>栏目数量：</b>
 <%= link_to @user.topics_number, user_topics_topic_path(:id => @user.id)%>
 </p> 
+
+<p>
+<b>上传头像：</b>
+<%= link_to "头像", face_user_path(:id => @user.id)%>
+</p> 
+
+
+<%= image_tag @user.photo.url %>
+<%= image_tag @user.photo.url(:medium) %>
+<%= image_tag @user.photo.url(:thumb) %>

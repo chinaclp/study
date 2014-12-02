@@ -1,0 +1,8 @@
+<b>上传头像</b>
+<%= form_for @user, :url => upload_user_path(:id => @user.id), :html => { :multipart => true } do |form| %>
+  <%= form.file_field :photo %>
+
+  <div class="actions">  
+    <%= form.submit "提交"%>  
+  </div>  
+<% end %>

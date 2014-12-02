@@ -14,6 +14,9 @@ gem 'ueditor_rails'
 
 gem 'devise'
 
+gem 'paperclip'     #上传图片插件
+
+gem 'mini_magick'     #图片处理
 
 # Gems used only for assets and not required
 # in production environments by default.
