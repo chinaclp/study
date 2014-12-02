@@ -12,14 +12,16 @@ class UsersController < ApplicationController
 
   def upload
     @user = User.find_by_id(params[:id]) if params[:id]
-    @user.update_attributes(user_params)
+    @user.photo = params[:user][:photo]
+    @user.save
+    #   @user.update_attributes(user_params)
     redirect_to(user_path(@user), :notice => 'photo was successfully updated.')
   end
 
-  private
+#  private
 
-  def user_params
-    params.require(:user).permit(:photo)
-  end
+#  def user_params
+#    params.require(:user).permit(:photo)
+#  end
 
 end

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org/'
 
 gem 'rails', '3.2.13'
 
@@ -17,6 +17,8 @@ gem 'devise'
 gem 'paperclip'     #上传图片插件
 
 gem 'mini_magick'     #图片处理
+
+gem 'carrierwave'   #和paperclip一样是上传图片包
 
 # Gems used only for assets and not required
 # in production environments by default.

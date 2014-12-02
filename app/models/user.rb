@@ -5,9 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :lockable
 
-  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/"
-  validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
-
   before_create :confrim
  
   def confrim
@@ -25,6 +22,8 @@ class User < ActiveRecord::Base
   def topics_number
     self.topics.count
   end
+
+  mount_uploader :photo, PhotoUploader
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :photo
