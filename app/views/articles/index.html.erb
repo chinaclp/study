@@ -30,8 +30,8 @@
             <td><%= article.user.name if article.user %></td>     <!-- if判断是否有用户名-->
             <td><%= article.comments_number %></td>
             <td>
-              <%= link_to '修改',edit_article_path(:id => article.id),:method => 'get'%>
-              <%= link_to '删除',article_path(:id => article.id),:method => 'delete'%>
+              <%= link_to '修改', edit_article_path(:id => article.id), :method => 'get'%>
+              <%= link_to '删除', article_path( :id => article.id ), :method => 'delete' %>
             </td>
           </tr>
         <% end %>

@@ -5,7 +5,9 @@
 
 <p>
 <b>作者：</b>
-<%= link_to @article.user.name, user_path(:id => @article.user.id) %>
+<% if @article.user %>
+<%= link_to @article.user.name, user_path(:id => @article.user.id ) %>
+<% end %>
 </p> 
 
 <p>

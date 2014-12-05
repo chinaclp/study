@@ -15,8 +15,8 @@
 
 <p>
 <b>上传头像：</b>
-<%= link_to "头像", face_user_path(:id => @user.id)%>
+<%= link_to "选择", face_user_path(:id => @user.id)%>
 </p> 
 
 
-<%= image_tag @user.photo.url %>
+<%= image_tag(@user.photo_url(:thumb)) if @user.photo %>
