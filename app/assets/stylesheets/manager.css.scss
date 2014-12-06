@@ -1,6 +1,10 @@
 // Place all the styles related to the manager controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//= require_self
+//= require articles
+
+
 
 .left{
   float: left;
@@ -26,7 +30,7 @@
 
 .part_one{
   width: 200px;
-  height: 800px;
+  height: 1000px;
   float: left;
   background-color: #CDB5CD;
   font-size: 20px;
@@ -40,7 +44,7 @@
 
 .part_two{
   width: 793px;
-  height: 800px;
+  height: 1000px;
   float: right;
   background-color: #CDBA96;
 }
@@ -63,4 +67,5 @@ body{
 .foot{
   height: 60;
   text-align: center;
+  margin-top: 20px;
 }

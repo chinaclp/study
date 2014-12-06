@@ -1,6 +1,6 @@
 class ManagerController < ApplicationController
    
-  layout "manager"
+  layout "manager", :only => [:index]
 
   before_filter :authenticate_user!
 

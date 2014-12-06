@@ -24,7 +24,7 @@
 
       <div class="seat-b title"> 
         <% if current_user %>
-          您好 <%= current_user.name %>!
+          您好 <%= link_to current_user.name, user_path(:id => current_user.id) %>！
           <%= link_to('退出', destroy_user_session_path, :method => :delete) %>
           <%#= link_to('修改密碼', edit_registration_path(:user)) %>
         <% else %>
@@ -42,6 +42,10 @@
         </div> 
         <div class="title"> 
           <a href='' class="tab">网站导航</a>
+        </div> 
+        <div class="title"> 
+          <a href='' class="tab">网站导航</a>
+          <%= link_to '登陆后台', manager_index_path %>
         </div> 
       </div>
 

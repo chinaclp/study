@@ -1,3 +1,34 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.left {
+  float: left;
+}
+
+.title{
+  width: 98px;
+  float: left;
+}
+
+.summary{
+  width: 376px;
+}
+
+.name{
+  width: 98px;
+}
+
+.count{
+  width: 70px;
+}
+
+.operate{
+  width: 130px;
+}
+
+.new{
+  text-align: center;
+  margin-top: 15px;
+}
